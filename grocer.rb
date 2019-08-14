@@ -5,7 +5,11 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  cart.select{|item| item-coupons}
+  coup=[0][:item]
+  if cart.has_key?(coup)
+    cart["#{coup} w/coupon"]={}
+  end
+  cart
 end
 
 def apply_clearance(cart)
